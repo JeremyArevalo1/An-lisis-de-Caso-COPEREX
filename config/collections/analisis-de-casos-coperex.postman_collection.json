@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "f1eeb4c3-0f69-44e4-ba81-0fd0a42f6c97",
+		"name": "analisis-de-casos-coperex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37415271"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "AuthAdmins",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Jose\",\r\n    \"username\": \"cortez147\",\r\n    \"email\": \"jose@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1234-4578\",\r\n    \"role\": \"ADMIN_ROLE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3004/analisiscoperex/v1/auth/registerAdministrador",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"analisiscoperex",
+										"v1",
+										"auth",
+										"registerAdministrador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"jose@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3004/analisiscoperex/v1/auth/loginAdministrador",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"analisiscoperex",
+										"v1",
+										"auth",
+										"loginAdministrador"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AuthClientes",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlYzRjOGU4MjYzM2VlMzcxYzFmNmIiLCJpYXQiOjE3NDA1NTYyODEsImV4cCI6MTc0MDU1OTg4MX0.srT9luCf8YylIXPW-RjxA5j9Oi36dGQA-qzJ3qWzsEs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Santi\",\r\n    \"username\": \"santi155\",\r\n    \"email\": \"kakas@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1558-22255\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3004/analisiscoperex/v1/auth/registerClientes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"analisiscoperex",
+										"v1",
+										"auth",
+										"registerClientes"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"jeremy@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3004/analisiscoperex/v1/auth/loginClientes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"analisiscoperex",
+										"v1",
+										"auth",
+										"loginClientes"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Editar",
+					"item": [
+						{
+							"name": "EditarAdministrador",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Jose\",\r\n    \"username\": \"cortez147\",\r\n    \"email\": \"jose@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1234-4578\",\r\n    \"role\": \"ADMIN_ROLE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3004/analisiscoperex/v1/users/administrador/67bec4c8e82633ee371c1f6b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"analisiscoperex",
+										"v1",
+										"users",
+										"administrador",
+										"67bec4c8e82633ee371c1f6b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EditarCliente",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Santi\",\r\n    \"username\": \"santi155\",\r\n    \"email\": \"kakas@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1558-22255\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3004/analisiscoperex/v1/users/clientes/67bec81cb866885fd0f19c46",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"analisiscoperex",
+										"v1",
+										"users",
+										"clientes",
+										"67bec81cb866885fd0f19c46"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/analisiscoperex/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"analisiscoperex",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/analisiscoperex/v1/users/67bec21132dd8c202b93a05b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"analisiscoperex",
+								"v1",
+								"users",
+								"67bec21132dd8c202b93a05b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

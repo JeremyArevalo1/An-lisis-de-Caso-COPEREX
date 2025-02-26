@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "67bec21132dd8c202b93a05b"
+  },
+  "name": "Elmer",
+  "username": "Elmer124",
+  "email": "elmer@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$20e9cxYC+WgaY/6/gM4fWQ$eXgyla73jZIRFW90wkjLrWGM9c7KYkjK+lyuIyxKsgk",
+  "phone": "1234-4578",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-26T07:26:09.857Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T07:26:09.857Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bec469e82633ee371c1f64"
+  },
+  "name": "Jeremy",
+  "username": "jeremy1255",
+  "email": "jeremy@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$IZVv5n9UNX334mvDKdQ7yA$V2sKojy4YDXLz1F/z5IbJtzoI6d46okeQ3KjMjiV8xw",
+  "phone": "1558-9999",
+  "role": null,
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-26T07:36:09.185Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T07:36:09.185Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bec4c8e82633ee371c1f6b"
+  },
+  "name": "Jose",
+  "username": "cortez147",
+  "email": "jose@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$9f7f4JRak9FTajRGEUf2MA$UhM50D+sjNb2kN8NLYTLX3zvsc1qg+DgQ1X1UHJyNnU",
+  "phone": "1234-4578",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-26T07:37:44.829Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T08:42:47.261Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67bec81cb866885fd0f19c46"
+  },
+  "name": "Santi",
+  "username": "santi155",
+  "email": "kakas@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$FuWs8KBgbtr9XMZGS40MWQ$/R0dgenX9peaMTA1xafkWh4dQlqh7cpeBiwQL868x2k",
+  "phone": "1558-22255",
+  "role": null,
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-26T07:51:56.709Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-26T08:59:51.443Z"
+  }
+}]
