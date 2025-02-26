@@ -7,7 +7,8 @@ import morgan from "morgan";
 import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticiones.js';
 import authRoutes from '../src/auth/auth-router.js';
-import userRoutes from '../src/users/user.routes.js'; 
+import userRoutes from '../src/users/user.routes.js';
+import companyRoutes from '../src/companies/company.routes.js'
 
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended : false }));
@@ -21,6 +22,7 @@ const middlewares = (app) => {
 const routes = (app) => {
     app.use('/analisiscoperex/v1/auth', authRoutes);
     app.use('/analisiscoperex/v1/users', userRoutes);
+    app.use('/analisiscoperex/v1/company', companyRoutes);
 }
 
 const conectarDB = async () => {

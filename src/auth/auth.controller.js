@@ -50,41 +50,6 @@ export const loginAdmin = async (req, res) => {
     }
 }
 
-export const registerAdmin = async(req, res) => {
-    try {
-        const data = req.body;
-
-        const encryptedPassword = await hash(data.password);
-
-        const user = await Usuario.create({
-            name: data.name,
-            username: data.username,
-            email: data.email,
-            password: encryptedPassword,
-            phone: data.phone,
-            role: data.role,
-        });
-
-        return res.status(201).json({
-            message: "User registered successfully",
-            userDetails: {
-                user: user.email
-            }
-        });
-
-    } catch (error) {
-        console.log(error);
-
-        return res.status(500).json({
-            message: "User registration failed",
-            error: error.message
-        });
-    }
-};
-
-
-
-
 export const loginCustomers = async (req, res) => {
 
     const { email, password, username } = req.body;
@@ -133,8 +98,15 @@ export const loginCustomers = async (req, res) => {
     }
 }
 
-export const registerCustomers = async(req, res) => {
+export const registerCustomers = async (req, res) => {
     try {
+        if (req.usuario.role !== 'ADMIN_ROLE') {
+            return res.status(403).json({
+                success: false,
+                message: 'No tienes permisos para agregar clientes.',
+            });
+        }
+
         const data = req.body;
 
         const encryptedPassword = await hash(data.password);
@@ -150,7 +122,7 @@ export const registerCustomers = async(req, res) => {
         return res.status(201).json({
             message: "User registered successfully",
             userDetails: {
-                user: user.email
+                user: user.email,
             }
         });
 

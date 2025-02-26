@@ -61,7 +61,7 @@ export const getUserById = async (req, res) => {
 export const updateAdmin = async (req, res = response) => {
     try {
         const { id } = req.params;
-        const { _id, password, email, role, ...data } = req.body;
+        const { _id, name, username, password, email, role, phone, ...data } = req.body;
 
         const buscarUser = await User.findById(id);
 
@@ -135,3 +135,38 @@ export const updateCustomers = async (req, res = response) => {
         });
     }
 };
+
+export const deleteUser = async (req, res = response) => {
+    try {
+        const { id } = req.params;
+        const buscarUser = await User.findById(id);
+
+        if (!buscarUser) {
+            return res.status(404).json({
+                success: false,
+                message: 'cliente no encontrado'
+            });
+        }
+
+        if (req.usuario.role !== 'ADMIN_ROLE') {
+            return res.status(403).json({
+                success: false,
+                message: 'No tienes permisos para eliminar a los clientes.',
+            });
+        }
+        
+        const updatedCategorie = await User.findByIdAndUpdate(id, { estado: false }, { new: true });
+
+        res.status(200).json({
+            success: true,
+            message: 'cliente eliminado exitosamente',
+            categorie: updatedCategorie
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Error al eliminar el cliente',
+            error
+        });
+    }
+}

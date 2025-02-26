@@ -1,6 +1,8 @@
 'use strict'
 
 import mongoose from "mongoose";
+import User from "../src/users/user.model.js"
+import { hash } from "argon2";
 
 export const dbConnection = async() => {
     try {
@@ -29,7 +31,35 @@ export const dbConnection = async() => {
             maxPoolSize: 50,
         });
 
+        await createAdmin();
+
     } catch (error) {
         console.log('Database connection failed', error);
     }
 };
+
+const createAdmin = async () => {
+    try {
+        const user = await User.findOne({ name: 'Elmer' });
+
+        if (!user) {
+            const cryptedPassword = await hash('12345678');
+
+            const userAdmin = new User({
+                name: 'Elmer',
+                username: 'elmer12',
+                email: 'elmer@example.com',
+                password: cryptedPassword,
+                phone: "1111-2222",
+                role: 'ADMIN_ROLE'
+            });
+
+            await userAdmin.save();
+            console.log('Admin user created successfully');
+        } else {
+            console.log("Admin already exists");
+        }
+    } catch (error) {
+        console.log('Error creating admin user', error);
+    }
+}

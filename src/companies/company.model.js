@@ -3,7 +3,7 @@ import { Schema, model } from "mongoose";
 const CompanySchema = Schema({
     nameCompany: {
         type: String,
-        required: true
+        required: [true, 'name company is required']
     },
     impactLevel: {
         type: String,
@@ -11,7 +11,7 @@ const CompanySchema = Schema({
     },
     yearsOfExperience: {
         type: String,
-        required: true
+        required: [true, 'years of experience is required']
     },
     businessCategory: {
         type: String,
@@ -19,10 +19,26 @@ const CompanySchema = Schema({
     },
     phone: {
         type: String,
-        required: true
+        required: [true, 'phone is required']
     },
     email: {
         type: String,
-        required: [true, 'name in required']
+        required: [true, 'email is required']
+    },
+    clientes: [{
+        type: Schema.Types.String,
+        ref: 'user',
+        required: true
+    }],
+    estado: {
+        type: Boolean,
+        default: true
     }
-})
+},
+    {
+        timestamps: true,
+        versionKey: false
+    }
+);
+
+export default model('company', CompanySchema);

@@ -13,44 +13,13 @@
 					"name": "AuthAdmins",
 					"item": [
 						{
-							"name": "Register",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Jose\",\r\n    \"username\": \"cortez147\",\r\n    \"email\": \"jose@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1234-4578\",\r\n    \"role\": \"ADMIN_ROLE\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3004/analisiscoperex/v1/auth/registerAdministrador",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3004",
-									"path": [
-										"analisiscoperex",
-										"v1",
-										"auth",
-										"registerAdministrador"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Login",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"jose@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"raw": "{\r\n    \"email\": \"elmer@example.com\",\r\n    \"password\": \"12345678\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -86,13 +55,13 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JlYzRjOGU4MjYzM2VlMzcxYzFmNmIiLCJpYXQiOjE3NDA1NTYyODEsImV4cCI6MTc0MDU1OTg4MX0.srT9luCf8YylIXPW-RjxA5j9Oi36dGQA-qzJ3qWzsEs",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2MDcxMTYsImV4cCI6MTc0MDYxMDcxNn0.1aQDzymWeigCmW7uNF01AMVSMEe6xjuEXAImptECod4",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Santi\",\r\n    \"username\": \"santi155\",\r\n    \"email\": \"kakas@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1558-22255\"\r\n}",
+									"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"username\": \"pepe1599\",\r\n    \"email\": \"pepe@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1111-1118\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -123,7 +92,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"jeremy@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"raw": "{\r\n    \"email\": \"kakas@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -164,7 +133,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Jose\",\r\n    \"username\": \"cortez147\",\r\n    \"email\": \"jose@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1234-4578\",\r\n    \"role\": \"ADMIN_ROLE\"\r\n}",
+									"raw": "{\r\n    \"name\": \"Elmer\",\r\n    \"username\": \"elmer12\",\r\n    \"email\": \"elmer@example.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1111-2222\",\r\n    \"role\": \"ADMIN_ROLE\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -172,7 +141,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3004/analisiscoperex/v1/users/administrador/67bec4c8e82633ee371c1f6b",
+									"raw": "http://localhost:3004/analisiscoperex/v1/users/administrador/67bf6b97067442a9f7294d1b",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -183,7 +152,7 @@
 										"v1",
 										"users",
 										"administrador",
-										"67bec4c8e82633ee371c1f6b"
+										"67bf6b97067442a9f7294d1b"
 									]
 								}
 							},
@@ -196,7 +165,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Santi\",\r\n    \"username\": \"santi155\",\r\n    \"email\": \"kakas@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1558-22255\"\r\n}",
+									"raw": "{\r\n    \"name\": \"Santi\",\r\n    \"username\": \"santi155\",\r\n    \"email\": \"santi@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1111-1113\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -204,7 +173,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3004/analisiscoperex/v1/users/clientes/67bec81cb866885fd0f19c46",
+									"raw": "http://localhost:3004/analisiscoperex/v1/users/clientes/67bf6da31bbd03df8f99440b",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -215,7 +184,7 @@
 										"v1",
 										"users",
 										"clientes",
-										"67bec81cb866885fd0f19c46"
+										"67bf6da31bbd03df8f99440b"
 									]
 								}
 							},
@@ -271,6 +240,84 @@
 					"name": "Eliminar",
 					"request": {
 						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2MDY0OTIsImV4cCI6MTc0MDYxMDA5Mn0.S2wCkMXeY7xGvMH6cI77mdDbOp1unQTLRy4Jre1x7FI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3004/analisiscoperex/v1/users/67bf78775a8324ac3068b267",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"analisiscoperex",
+								"v1",
+								"users",
+								"67bf78775a8324ac3068b267"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empresas",
+			"item": [
+				{
+					"name": "Agregar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2MTEyNTgsImV4cCI6MTc0MDYxNDg1OH0.FTSCxJUbDA_K02MC3x-ri4CB6z5Bf-HnxmNmQ9SyFk0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameCompany\": \"SAMBORO\",\r\n    \"impactLevel\": \"somos una empresa de ceramica y pisos\",\r\n    \"yearsOfExperience\": \"6\",\r\n    \"businessCategory\": \"Pisos y Ceramica\",\r\n    \"phone\": \"2220-1212\",\r\n    \"email\": \"samboro@samboro.com\",\r\n    \"clientes\": [\"67bf6da31bbd03df8f99440b\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3004/analisiscoperex/v1/company/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"analisiscoperex",
+								"v1",
+								"company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar",
+					"request": {
+						"method": "GET",
 						"header": []
 					},
 					"response": []

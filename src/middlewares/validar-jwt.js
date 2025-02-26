@@ -11,9 +11,7 @@ export const validarJWT = async(req, res, next) =>{
             msg: 'No hay token en la peticion'
         })
     }
-
-
-
+    
     try {
         const {uid} = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
         const usuario = await Usuario.findById(uid);
@@ -29,13 +27,6 @@ export const validarJWT = async(req, res, next) =>{
                 msg: 'Token no valido - usuario conn estado: false'
             })
         };
-
-
-        if (usuario.role !== 'ADMIN_ROLE') {
-            return res.status(403).json({
-                msg: 'No tienes permisos para realizar esta acción'
-            });
-        }
 
         req.usuario = usuario;
 
