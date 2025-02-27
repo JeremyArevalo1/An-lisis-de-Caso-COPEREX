@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { getCompanies, getCompanyById, createCompany } from "./company.controller.js";
+import { getCompanies, getCompanyById, createCompany, updateCompany } from "./company.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -29,5 +29,15 @@ router.post(
     ],
     createCompany
 )
+
+router.put(
+    '/:id',
+    [
+        validarJWT,
+        check("id", "No es un id válido").isMongoId(),
+        validarCampos
+    ],
+    updateCompany
+);
 
 export default router;

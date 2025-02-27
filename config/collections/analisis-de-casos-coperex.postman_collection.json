@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f1eeb4c3-0f69-44e4-ba81-0fd0a42f6c97",
+		"_postman_id": "847fe6f6-3cbd-4379-9f41-38e89a7c6a37",
 		"name": "analisis-de-casos-coperex",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "37415271"
@@ -55,7 +55,7 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2MDcxMTYsImV4cCI6MTc0MDYxMDcxNn0.1aQDzymWeigCmW7uNF01AMVSMEe6xjuEXAImptECod4",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2MzcwNzAsImV4cCI6MTc0MDY0MDY3MH0.ofLsN5F48kzmsqlR4r_6b8Xd0jY9xXT5NqUzYgssziI",
 										"type": "text"
 									}
 								],
@@ -276,13 +276,13 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2MTEyNTgsImV4cCI6MTc0MDYxNDg1OH0.FTSCxJUbDA_K02MC3x-ri4CB6z5Bf-HnxmNmQ9SyFk0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2NDA3MzMsImV4cCI6MTc0MDY0NDMzM30.5KkUj2ArQag_fCVPpdT8qxXhe_DHBf54Nu-E7bhqy78",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nameCompany\": \"SAMBORO\",\r\n    \"impactLevel\": \"somos una empresa de ceramica y pisos\",\r\n    \"yearsOfExperience\": \"6\",\r\n    \"businessCategory\": \"Pisos y Ceramica\",\r\n    \"phone\": \"2220-1212\",\r\n    \"email\": \"samboro@samboro.com\",\r\n    \"clientes\": [\"67bf6da31bbd03df8f99440b\"]\r\n}",
+							"raw": "{\r\n    \"nameCompany\": \"SAMBORO\",\r\n    \"impactLevel\": \"somos una empresa de ceramica y pisos\",\r\n    \"yearsOfExperience\": \"6\",\r\n    \"businessCategory\": \"Pisos y Ceramica\",\r\n    \"phone\": \"2220-1212\",\r\n    \"email\": \"samboro@samboro.com\",\r\n    \"clientes\": [\"Santi\", \"Jeremy\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -310,7 +310,21 @@
 					"name": "Listar",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/analisiscoperex/v1/company/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"analisiscoperex",
+								"v1",
+								"company",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -318,7 +332,58 @@
 					"name": "Buscar",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3004/analisiscoperex/v1/company/67c00da14c8e0a89647584a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"analisiscoperex",
+								"v1",
+								"company",
+								"67c00da14c8e0a89647584a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2NDQ2ODUsImV4cCI6MTc0MDY0ODI4NX0.76-6UmcJ0RLBh_YXd9d-Gsv0FsDMxZFSIEYl5YHIdms",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameCompany\": \"SAMBORO\",\r\n    \"impactLevel\": \"somos una empresa de ceramica y pisos\",\r\n    \"yearsOfExperience\": \"6\",\r\n    \"businessCategory\": \"Pisos y Ceramica\",\r\n    \"phone\": \"2220-1212\",\r\n    \"email\": \"samboro@samboro.com\",\r\n    \"clientes\": [\"Lolo\", \"\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3004/analisiscoperex/v1/company/67c00da14c8e0a89647584a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"analisiscoperex",
+								"v1",
+								"company",
+								"67c00da14c8e0a89647584a4"
+							]
+						}
 					},
 					"response": []
 				}

@@ -60,7 +60,15 @@ export const getCompanyById = async (req, res) => {
 export const createCompany = async (req, res) => {
     try {
         const data = req.body;
-        const user = await User.findOne({ name: data.name });
+        const user = await User.find({ name: { $in: data.clientes }});
+        const empresaExistente = await Company.findOne({ $or: [{email: data.email }, { nameCompany: data.nameCompany }]});
+
+        if (empresaExistente) {
+            return res.status(400).json({
+                success: false,
+                message: 'Ya existe esta empresa(email y nombre. (de la empresa))'
+            });
+        }
 
         if (req.usuario.role !== 'ADMIN_ROLE') {
             return res.status(403).json({
@@ -69,23 +77,22 @@ export const createCompany = async (req, res) => {
             });
         }
 
-        if (!user || user.role == 'ADMIN_ROLE') {
+        const clientesValidos = user.filter(user => user.role !== 'ADMIN_ROLE');
+
+        if (clientesValidos.length === 0) {
             return res.status(400).json({
                 success: false,
-                message: 'El cliente no puede ser administrador o no existe el cliente' 
+                message: 'No hay clientes válidos para agregar a la empresa.',
             });
         }
 
-        // Crear la empresa y asociar al cliente con el campo 'clientes'
         const company = new Company({
             ...data,
-            clientes: [user._id]  // Asociamos al usuario cliente con su _id
+            clientes: clientesValidos.map(user => user._id)
         });
 
-        // Guardar la empresa
         await company.save();
 
-        // Responder con éxito
         return res.status(200).json({
             success: true,
             company
@@ -100,3 +107,69 @@ export const createCompany = async (req, res) => {
         })
     }
 }
+
+export const updateCompany = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { _id, nameCompany, email, ...data } = req.body;
+
+        const company = await Company.findById(id);
+
+        if (!company) {
+            return res.status(404).json({
+                success: false,
+                message: 'Empresa no encontrada',
+            });
+        }
+
+        if (req.usuario.role !== 'ADMIN_ROLE') {
+            return res.status(403).json({
+                success: false,
+                message: 'No tienes permisos para editar empresas.',
+            });
+        }
+
+        const empresaExistente = await Company.findOne({
+            $or: [{ email: data.email }, { nameCompany: data.nameCompany }]
+        });
+
+        if (empresaExistente && empresaExistente._id.toString() !== id) {
+            return res.status(400).json({
+                success: false,
+                message: 'Ya existe una empresa con el mismo nombre o email.',
+            });
+        }
+
+        const users = await User.find({ name: { $in: data.clientes } });
+        const clientesValidos = users.filter(user => user.role !== 'ADMIN_ROLE');
+
+        if (clientesValidos.length === 0) {
+            return res.status(400).json({
+                success: false,
+                message: 'No hay clientes válidos para agregar a la empresa.',
+            });
+        }
+
+        const updatedCompany = await Company.findByIdAndUpdate(
+            id,
+            {
+                ...data,
+                clientes: clientesValidos.map(user => user._id)
+            },
+            { new: true }
+        );
+
+        return res.status(200).json({
+            success: true,
+            msg: 'Empresa actualizada',
+            company: updatedCompany
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error al actualizar la empresa',
+            error
+        });
+    }
+};

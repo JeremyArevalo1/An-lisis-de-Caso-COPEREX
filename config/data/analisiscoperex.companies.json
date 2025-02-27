@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "67c00da14c8e0a89647584a4"
+  },
+  "nameCompany": "SAMBORO",
+  "impactLevel": "somos una empresa de ceramica y pisos",
+  "yearsOfExperience": "6",
+  "businessCategory": "Pisos y Ceramica",
+  "phone": "2220-1212",
+  "email": "samboro@samboro.com",
+  "clientes": [
+    {
+      "$oid": "67bf8db9a98d6bddd4f34499"
+    }
+  ],
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-27T07:00:49.830Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-27T08:39:03.843Z"
+  }
+}]

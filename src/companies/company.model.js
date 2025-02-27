@@ -26,7 +26,7 @@ const CompanySchema = Schema({
         required: [true, 'email is required']
     },
     clientes: [{
-        type: Schema.Types.String,
+        type: Schema.Types.ObjectId,
         ref: 'user',
         required: true
     }],
