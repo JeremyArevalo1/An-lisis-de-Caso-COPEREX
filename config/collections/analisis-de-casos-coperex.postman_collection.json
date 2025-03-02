@@ -55,13 +55,13 @@
 								"header": [
 									{
 										"key": "x-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2MzcwNzAsImV4cCI6MTc0MDY0MDY3MH0.ofLsN5F48kzmsqlR4r_6b8Xd0jY9xXT5NqUzYgssziI",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0MDhmN2E1NWMwNjFmZTUxZTA0NmEiLCJpYXQiOjE3NDA5MDA2NDgsImV4cCI6MTc0MDkwNDI0OH0.eGwFWQ6UzobQnxOCXVKATP-yE9U5L7qL16GXfVYRYsY",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"username\": \"pepe1599\",\r\n    \"email\": \"pepe@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1111-1118\"\r\n}",
+									"raw": "{\r\n    \"name\": \"Jeremy\",\r\n    \"username\": \"jere125\",\r\n    \"email\": \"jeremy@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1111-1110\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -92,7 +92,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"kakas@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+									"raw": "{\r\n    \"email\": \"jeremy@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -162,10 +162,17 @@
 							"name": "EditarCliente",
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Santi\",\r\n    \"username\": \"santi155\",\r\n    \"email\": \"santi@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1111-1113\"\r\n}",
+									"raw": "{\r\n    \"name\": \"Jeremy\",\r\n    \"username\": \"jere125\",\r\n    \"email\": \"jeremy@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"1111-1112\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -173,7 +180,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:3004/analisiscoperex/v1/users/clientes/67bf6da31bbd03df8f99440b",
+									"raw": "http://localhost:3004/analisiscoperex/v1/users/clientes/67c40965a55c061fe51e0473",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -184,7 +191,7 @@
 										"v1",
 										"users",
 										"clientes",
-										"67bf6da31bbd03df8f99440b"
+										"67c40965a55c061fe51e0473"
 									]
 								}
 							},
@@ -270,19 +277,53 @@
 			"name": "Empresas",
 			"item": [
 				{
+					"name": "Reporte-excel",
+					"item": [
+						{
+							"name": "New-Report",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0MDhmN2E1NWMwNjFmZTUxZTA0NmEiLCJpYXQiOjE3NDA5MDA2NDgsImV4cCI6MTc0MDkwNDI0OH0.eGwFWQ6UzobQnxOCXVKATP-yE9U5L7qL16GXfVYRYsY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3004/analisiscoperex/v1/company/report/excel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"analisiscoperex",
+										"v1",
+										"company",
+										"report",
+										"excel"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Agregar",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA2NDA3MzMsImV4cCI6MTc0MDY0NDMzM30.5KkUj2ArQag_fCVPpdT8qxXhe_DHBf54Nu-E7bhqy78",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA4OTkzMjUsImV4cCI6MTc0MDkwMjkyNX0.J-prHvG6U1wsxqd6OtIkTV0w9zA_vhcGvRpMg9i6mMk",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nameCompany\": \"SAMBORO\",\r\n    \"impactLevel\": \"somos una empresa de ceramica y pisos\",\r\n    \"yearsOfExperience\": \"6\",\r\n    \"businessCategory\": \"Pisos y Ceramica\",\r\n    \"phone\": \"2220-1212\",\r\n    \"email\": \"samboro@samboro.com\",\r\n    \"clientes\": [\"Santi\", \"Jeremy\"]\r\n}",
+							"raw": "{\r\n    \"nameCompany\": \"KAKA\",\r\n    \"impactLevel\": \"somos una empresa de ceramica y pisos\",\r\n    \"yearsOfExperience\": \"6\",\r\n    \"businessCategory\": \"Pisos y Ceramica\",\r\n    \"phone\": \"2220-1212\",\r\n    \"email\": \"kaka@samboro.com\",\r\n    \"clientes\": [\"\", \"\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -308,11 +349,29 @@
 				},
 				{
 					"name": "Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA4OTQ2ODksImV4cCI6MTc0MDg5ODI4OX0.eC69u7_Pf8I6VtH_-uneopn4XVvYLutbDJ9YRYduI60",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3004/analisiscoperex/v1/company/",
+							"raw": "http://localhost:3004/analisiscoperex/v1/company/?order=A-Z",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -323,6 +382,12 @@
 								"v1",
 								"company",
 								""
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "A-Z"
+								}
 							]
 						}
 					},
@@ -332,9 +397,15 @@
 					"name": "Buscar",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JmNmI5NzA2NzQ0MmE5ZjcyOTRkMWIiLCJpYXQiOjE3NDA4OTU0MjksImV4cCI6MTc0MDg5OTAyOX0.SW1Ux4-iLDckcoA19TJGKGMKUjJQDICebvvk7pbSNn8",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:3004/analisiscoperex/v1/company/67c00da14c8e0a89647584a4",
+							"raw": "http://localhost:3004/analisiscoperex/v1/company/67c3f25ab85af8360de98f72",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -344,7 +415,14 @@
 								"analisiscoperex",
 								"v1",
 								"company",
-								"67c00da14c8e0a89647584a4"
+								"67c3f25ab85af8360de98f72"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -363,7 +441,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nameCompany\": \"SAMBORO\",\r\n    \"impactLevel\": \"somos una empresa de ceramica y pisos\",\r\n    \"yearsOfExperience\": \"6\",\r\n    \"businessCategory\": \"Pisos y Ceramica\",\r\n    \"phone\": \"2220-1212\",\r\n    \"email\": \"samboro@samboro.com\",\r\n    \"clientes\": [\"Lolo\", \"\"]\r\n}",
+							"raw": "{\r\n    \"nameCompany\": \"SAMBORO\",\r\n    \"impactLevel\": \"somos una empresa de ceramica y pisos\",\r\n    \"yearsOfExperience\": \"6\",\r\n    \"businessCategory\": \"Pisos y Ceramica\",\r\n    \"phone\": \"2220-1212\",\r\n    \"email\": \"samboro@samboro.com\",\r\n    \"clientes\": [\"\", \"\"]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
